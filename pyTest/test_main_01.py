@@ -1,5 +1,5 @@
 # from <file> import <function>
-from main import get_weather
+from pyTest.main_01 import get_weather
 
 
 # create the test function test_<function>
