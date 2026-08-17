@@ -1,4 +1,4 @@
-def get_weather(temp) -> str:
+def get_weather(temp: int | float) -> str:
     if temp > 20:
         return "hot"
     else:
