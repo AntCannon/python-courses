@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotAllowed
 
 # Create your views here.
 
@@ -49,3 +49,15 @@ def redirect_view(request):
     # do stuff
     # return redirect(<view name>)
     return redirect("hello_html")
+
+
+# post_example
+def post_endpoint_view(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        age = request.POST.get("age")
+        job = request.POST.get("job")
+
+        return HttpResponse(f"You posted: {name = }, {age = }, {job =}")
+    else:
+        return HttpResponseNotAllowed(["POST"])
