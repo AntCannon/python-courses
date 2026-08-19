@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -37,5 +37,15 @@ def add_view(request, num1, num2):
     return HttpResponse(f"Sum is {num1 + num2}")
 
 
+# query
+# helloquery/?query=value
 def hello_query_view(request):
+    # return HttpResponse(<access request arg>)
     return HttpResponse(f"Your query was {request.GET.get("query")}")
+
+
+# redirect. import from django.shortcuts
+def redirect_view(request):
+    # do stuff
+    # return redirect(<view name>)
+    return redirect("hello_html")
