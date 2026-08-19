@@ -35,3 +35,7 @@ def hello_path_view(request, name):
 
 def add_view(request, num1, num2):
     return HttpResponse(f"Sum is {num1 + num2}")
+
+
+def hello_query_view(request):
+    return HttpResponse(f"Your query was {request.GET.get("query")}")
