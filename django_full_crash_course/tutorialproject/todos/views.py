@@ -58,6 +58,11 @@ def post_endpoint_view(request):
         age = request.POST.get("age")
         job = request.POST.get("job")
 
-        return HttpResponse(f"You posted: {name = }, {age = }, {job =}")
+        return HttpResponse(f"You posted: {name = }, {age = }, {job = }")
     else:
         return HttpResponseNotAllowed(["POST"])
+
+
+# submit example
+def submit_post_view(request):
+    return render(request, "todos/submit.html")

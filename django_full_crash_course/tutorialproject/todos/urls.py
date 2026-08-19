@@ -11,4 +11,5 @@ urlpatterns = [
     path("add/<int:num1>/<int:num2>", views.add_view, name="add"),
     path("helloquery/", views.hello_query_view, name="hello_query"),
     path("postendpoint/", views.post_endpoint_view, name="post_example"),
+    path("submitendpoint/", views.submit_post_view, name="submit_example"),
 ]
